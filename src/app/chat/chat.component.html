@@ -1,0 +1,53 @@
+<div class="container">
+  <!-- -------------------------------header chat------------------------ -->
+  <div class="header">
+    <div class="header-avatar" *ngIf="persons">
+      <img class="header_img" src="{{ persons?.avatar }}" alt="Avatar" />
+      <img
+        class="header-checkmark"
+        src="assets/img/checkmark.png"
+        alt="Green checkmark"
+      />
+    </div>
+    <div class="person-name">
+      <p>{{ persons?.name }}</p>
+    </div>
+  </div>
+  <!-- ----------------------------------body chat-------------------- -->
+  <div class="body">
+    <div class="messages" *ngFor="let joke of jokes">
+      <div class="messageContent">
+        {{ joke.body }}
+      </div>
+      <div class="time">
+        {{ joke.time }}
+      </div>
+    </div>
+    <div
+      class="messages"
+      *ngFor="let message of persons?.message"
+      [ngClass]="{ me: message.me }"
+    >
+      <div class="messageContent">
+        {{ message.body }}
+      </div>
+      <div class="time">
+        <span>{{ time | date: 'shortDate'  }}</span>
+        <span>{{ time | date: 'shortTime'  }}</span>
+      </div>
+    </div>
+  </div>
+  <!-- -------------------------------------------footer chat------------------------ -->
+  <div class="footer">
+    <div class="footer__message">
+      <input
+        class="message-input"
+        type="text"
+        placeholder="Type your message"
+        (keyup.enter)="submitMessage($event)"
+        (keyup.enter)="getJoke()"
+      />
+      <img src="assets/img/sent.png" alt="Send a message"/>
+    </div>
+  </div>
+</div>

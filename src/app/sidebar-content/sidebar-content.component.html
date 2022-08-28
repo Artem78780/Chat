@@ -1,0 +1,47 @@
+<div class="sidebar__content">
+  <!-- -------------------------------------header in sidebar------------ -->
+  <div class="sidebar__header">
+    <div class="header-user">
+      <img class="user-avatar" src="assets/img/avatar.svg" alt="Avatar" />
+      <img
+        class="user-checkmark"
+        src="assets/img/checkmark.png"
+        alt="Green checkmark"
+      />
+    </div>
+    <div class="header-search">
+      <img width="15" src="assets/img/search.ico" alt="" />
+      <input
+        [(ngModel)]="searchPerson"
+        type="text"
+        placeholder="Search or start new chat"
+      />
+    </div>
+  </div>
+
+  <!-- -----------------------------------------sidebar content--------------------------- -->
+  <div class="content-title">
+    <h3>Chats</h3>
+  </div>
+  <div
+    class="content-person"
+    *ngFor="let person of !searchPerson ? date : filterPersonName"
+    (click)="selectedPerson.emit(person)"
+  >
+    <div class="person-img">
+      <img class="user-avatar" src="{{ person.avatar }}" alt="Avatar" />
+      <img
+        class="user-checkmark"
+        src="assets/img/checkmark.png"
+        alt="Green checkmark"
+      />
+    </div>
+    <div class="person-description">
+      <div>
+        <div class="person-name">{{ person.name }}</div>
+        <div class="person-message">{{ person.latestMessage }}</div>
+      </div>
+      <div class="message-time">{{ person.time }}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+
+/*------header sidebar------------ */
+.sidebar__header {
+    padding: 10px;
+    background: #e7e7e7;
+}
+
+.sidebar__content {
+    height: 100%;
+    background: #fafafa;
+}
+
+.header-user {
+    position: relative;
+}
+
+.user-avatar{
+    width: 50px;
+}
+
+.user-checkmark {
+    position: absolute;
+    width: 15px;
+    bottom: 5px;
+    left: 40px;
+}
+
+.header-search {
+    position: relative;
+    margin-top: 10px;
+}
+
+.header-search img {
+    position: absolute;
+    z-index: 2;
+    left: 10px;
+    top: 5px;
+}
+
+.header-search input {
+    width: 100%;
+    border-radius: 12px;
+    padding: 5px 3px 5px 35px;
+    font-size: 14px;
+    border: none;
+    background-color: #fcfcfc;
+    outline: none;
+}
+/*---------------------------------------- sidebar content ----------*/
+.content-title {
+    margin: 20px 10px;
+    color: #0092da;
+    font-size: 18px;
+}
+
+.content-person {
+    display: flex;
+    padding: 7px 10px;
+    border-bottom: 2px solid #e4e4e4;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+.content-person:hover {
+    background-color: #ebebeb;
+}
+
+.person-img {
+    height: 40px;
+    position: relative;
+}
+.user-avatar{
+    border-radius: 50%;
+    height: 100%;
+    width: 40px;
+    vertical-align: middle;
+}
+.user-checkmark {
+    position: absolute;
+    width: 13px;
+    bottom: 2px;
+    left: 33px;
+}
+
+.person-description {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 12px;
+}
+
+.person-name {
+    font-weight: 600;
+}
+
+.person-message {
+    margin-top: 3px;
+    color: #767676;
+    font-size: 14px;
+}
+
+.message-time {
+    font-size: 12px;
+    color: #767676;
+}
